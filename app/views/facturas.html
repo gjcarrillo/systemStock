@@ -1,0 +1,34 @@
+<div >
+<div class="row">
+<input ng-model="search" class="col-md-6 col-lg-6 col-md-offset-2 col-lg-offset-2" type="text" placeholder="Buscar factura">
+</div>
+<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Generar Nueva Factura</button>
+  <hr>
+  <div uib-collapse="isCollapsed">
+    <form class="form-inline">
+      <div class="form-group">
+       <strong>Aqui va la plantilla del form, no se si te parece bien asi o colocarlo con un modal</strong>
+      </div>
+    </form>
+  </div>
+    <div class="table-responsive">
+      <table class="table">
+      <tr>
+        <th >#</th>
+        <th >Cedula</th>
+        <th >Nombre</th>
+        <th >Apellido</th>
+        <th >Ver</th>
+      </tr>
+      <tbody ng-repeat="factura in fact | filter:search">
+        <tr>
+          <td>{{factura.id}}</td>
+          <td>{{factura.cedula}}</td>
+          <td>{{factura.nombre}}</td>
+          <td>{{factura.apellido}}</td>
+          <td><button ng-click="ShowFactura(factura)">Ver Factura</button></td>
+        </tr>
+      </tbody>
+      </table>
+   </div>
+</div>

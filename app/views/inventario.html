@@ -1,0 +1,33 @@
+<div >
+<div class="row">
+<input ng-model="search" class="col-md-6 col-lg-6 col-md-offset-2 col-lg-offset-2" type="text" placeholder="Buscar">
+</div>
+<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Agregar un producto</button>
+  <hr>
+  <div uib-collapse="isCollapsed">
+    <div class="well well-lg">
+      Nombre:<input ng-model="nuevo.name" type="text">Cantidad:<input ng-model="nuevo.mount" type="text"> <button ng-click="add(nuevo)" class="btn btn info">Agregar</button>
+    </div>
+  </div>
+  <div ng-repeat="item in items | filter:search">
+      
+      <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-3">
+        <strong  >Articulo:</strong> {{item.name}}
+        </div>
+        <div >
+        <strong class="col-sm-3 col-md-2 col-lg-2">Cantidad:</strong><input  class="col-md-1 col-lg-1" type="text" value="{{item.mount}}" disabled>
+        </div>
+        <div class="col-sm-3 col-md-2 col-lg-2">
+        Ingrese la cantidad a modificar<input  class="col-md-1 col-lg-1"  ng-model="modal.change" type="text">
+        </div>
+        <div class="col-sm-3 col-md-4 col-lg-4">
+        <button  class="btn btn info" ng-click="sum(item,modal)">Adicionar</button>
+        <button class="btn btn info" ng-click="rest(item,modal)">Descontar</button>
+        <button class="btn btn info" ng-click="delete(item,$index)">Eliminar</button>
+        </div>
+      </div>
+
+
+  </div>
+</div>
