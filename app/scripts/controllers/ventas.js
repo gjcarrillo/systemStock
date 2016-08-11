@@ -1,0 +1,44 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name systemStockApp.controller:VentasCtrl
+ * @description
+ * # VentasCtrl
+ * Controller of the systemStockApp
+ */
+angular.module('systemStockApp')
+  .controller('VentasCtrl',['$scope','$http','ngNotify', function ($scope,$http,ngNotify) {
+   
+    $scope.items='';
+    $http.get('controllers/getController.php')
+          .then(function(response) 
+          {
+          console.log(response.data)
+          if (response.data.mensaje == "success")
+          {$scope.items=response.data.data} 
+          else
+          {alert(response.data);}
+          });
+  	
+   	$scope.rest=function(item,modal)
+  	{
+
+      var data =[{id: item.id},{mount:item.mount-modal.change}];
+      $http.post('controllers/updateController.php',data)
+          .then(function(response) 
+          {
+          console.log(response.data)
+          if (response.data.mensaje == "success")
+          {
+          	ngNotify.set('Vendido Con exito');
+          	item.mount-=modal.change;
+          	modal.change='';
+          } 
+          else
+          {
+          	ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');
+          }
+          });
+  	}
+  }]);

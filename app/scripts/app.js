@@ -16,7 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngNotify'
+    
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -29,6 +31,11 @@ angular
         templateUrl: 'views/facturas.html',
         controller: 'FacturasCtrl',
         controllerAs: 'facturas'
+      })
+      .when('/ventas', {
+        templateUrl: 'views/ventas.html',
+        controller: 'VentasCtrl',
+        controllerAs: 'ventas'
       })
       .otherwise({
         redirectTo: '/inventario'
