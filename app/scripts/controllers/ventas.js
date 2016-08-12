@@ -23,7 +23,12 @@ angular.module('systemStockApp')
   	
    	$scope.rest=function(item,modal)
   	{
-
+      if(item.mount-modal.change<0)
+      {
+        ngNotify.set('Error cantidad no valida', 'error');
+      }
+      else
+      {
       var data =[{id: item.id},{mount:item.mount-modal.change}];
       $http.post('controllers/updateController.php',data)
           .then(function(response) 
@@ -40,5 +45,6 @@ angular.module('systemStockApp')
           	ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');
           }
           });
+      }
   	}
   }]);

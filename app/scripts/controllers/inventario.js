@@ -40,6 +40,32 @@ angular.module('systemStockApp')
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
           });
   	}
+    $scope.rest=function(item,modal)
+    {
+      if(item.mount-modal.change<0)
+      {
+        ngNotify.set('Error cantidad no valida', 'error');
+      }
+      else
+      {
+      var data =[{id: item.id},{mount:item.mount-modal.change}];
+      $http.post('controllers/updateController.php',data)
+          .then(function(response) 
+          {
+          console.log(response.data)
+          if (response.data.mensaje == "success")
+          {
+            ngNotify.set('Vendido Con exito');
+            item.mount-=modal.change;
+            modal.change='';
+          } 
+          else
+          {
+            ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');
+          }
+          });
+      }
+    }
   	$scope.delete=function(item,index)
   	{
       var data =[{id: item.id}];
