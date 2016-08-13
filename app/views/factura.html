@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="../styles/bootstrap/bootstrap.min.css"  media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="../styles/bootstrap/font-awesome.min.css"  media="screen,projection"/>
-  <style type="text/css" media="screen">
-  	.center-text{
-  		text-align: center;
-  		margin: 0px auto;
-
-  	}
-  	table{
-  		width: 100%;
-  		text-align: center;
-  		margin-bottom: 10px;
-  	}
-  	table,td,th {
-  		text-align: center !important;
-  border-collapse: collapse;
-  border: 1px solid black;
-}
-	h1,h5,h6{
+<style type="text/css" media="screen">
+	.center-text{
+		text-align: center;
+		margin: 0px auto;
+	}
+	.factura > table{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.factura > table,.factura > td,.factura > th {
+		text-align: center !important;
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	.factura > h1,h5,h6{
 		margin: 0px auto;
 	}
 	.none-margin{
@@ -45,10 +35,9 @@
 	.top{
 		margin-bottom: 20px !important;
 	}
-  </style>
-</head>
-<body>
+</style>
 	<!-- TOP -->
+<div class="factura">
 	<div class="box">
 		<div class="col-xs-12 col-sm-12 col-lg-12 top">
 			<div class="col-xs-2 col-sm-2 col-lg-2">
@@ -71,25 +60,17 @@
 								<th>AÑO</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody >
 							<tr>
-								<td>data</td>
-								<td>data</td>
-								<td>data</td>
+								<td><input class="col-xs-4 col-sm-4 col-lg-4" disabled="false" type="text" name="dia"></td>
+								<td><input class="col-xs-4 col-sm-4 col-lg-4" disabled="false" type="text" name="mes"></td>
+								<td><input class="col-xs-4 col-sm-4 col-lg-4" disabled="false" type="text" name="año"></td>
 							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="row">
-					<table>
-						<thead>
-							<tr>
-								<th>ORDEN DE REPARACION</th>
+							<tr >
+								<th colspan="3">ORDEN DE REPARACION</th>
 							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>data</td>
+							<tr >
+								<td colspan="3"><input class="col-xs-12 col-sm-12 col-lg-12" disabled="false" type="text" name="año"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -278,5 +259,4 @@
 		</div>
 		<!-- Falla de el Equipo: -->
 	</div>
-</body>
-</html>
+</div>

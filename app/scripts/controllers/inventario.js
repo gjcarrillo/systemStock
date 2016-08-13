@@ -12,7 +12,7 @@ angular.module('systemStockApp')
 
   	$scope.isCollapsed=true;
   	console.log($scope.isCollapsed);
-  	$scope.items=[{name:"Mica",mount:"12"},{name:"Pantalla",mount:"6"},{name:"Tactil",mount:"4"}];
+  	$scope.items=[{name:"Mica",precio:"100.00bsf",mount:"12"},{name:"Pantalla",precio:"900.00bsf",mount:"6"},{name:"Tactil",precio:"9.000.00bsf",mount:"4"}];
 
   	$scope.sum=function(item,modal)
   	{
@@ -28,8 +28,9 @@ angular.module('systemStockApp')
   	}
   	$scope.add=function(nuevo)
   	{	
-  		$scope.items.push({name:nuevo.name,mount:nuevo.mount});
-  		$scope.nuevo.name='';
+  		$scope.items.push({name:nuevo.name,precio:nuevo.precio,mount:nuevo.mount});
+      $scope.nuevo.name='';
+  		$scope.nuevo.precio='';
   		$scope.nuevo.mount='';
 
   	}	
