@@ -85,7 +85,6 @@ angular.module('systemStockApp')
   	}
   	$scope.add=function(nuevo)
   	{	
-<<<<<<< HEAD
       var data =[{name: nuevo.name},{mount:nuevo.mount}];
       $http.post('controllers/addController.php',data)
           .then(function(response) 
@@ -101,13 +100,7 @@ angular.module('systemStockApp')
           else
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
           });
-=======
-  		$scope.items.push({name:nuevo.name,precio:nuevo.precio,mount:nuevo.mount});
-      $scope.nuevo.name='';
-  		$scope.nuevo.precio='';
-  		$scope.nuevo.mount='';
 
->>>>>>> origin/slave
   	}	
 
   }]);
