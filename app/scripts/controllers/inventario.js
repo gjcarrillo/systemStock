@@ -19,27 +19,31 @@ angular.module('systemStockApp')
           {
           console.log(response.data)
           if (response.data.mensaje == "success")
-          {$scope.items=response.data.data} 
+            {$scope.items=response.data.data} 
           else
-          {ngNotify.set('Ocurrio un error al conectar, actualize la pagina para intentarlo nuevamente', 'error');}
+            {ngNotify.set('Ocurrio un error al conectar, actualize la pagina para intentarlo nuevamente', 'error');}
           });
   	
 
   	$scope.sum=function(item,modal)
   	{
-      var data =[{id: item.id},{mount:parseInt(item.mount)+parseInt(modal.change)}];
-      $http.post('controllers/updateController.php',data)
-          .then(function(response) 
-          {
-          console.log(response.data)
-          if (response.data.mensaje == "success")
-          {ngNotify.set('Se ha aumentado el inventario');
-            item.mount=parseInt(item.mount)+parseInt(modal.change);
-            modal.change='';
-          } 
-          else
-          {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
-          });
+      if (parseInt(modal.change)>0){
+        var data =[{id: item.id},{mount:parseInt(item.mount)+parseInt(modal.change)}];
+        $http.post('controllers/updateController.php',data)
+            .then(function(response)
+            {
+            console.log(response.data)
+            if (response.data.mensaje == "success")
+            {ngNotify.set('Se ha aumentado el inventario');
+              item.mount=parseInt(item.mount)+parseInt(modal.change);
+              modal.change='';
+            } 
+            else
+            {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
+            });
+      }else{
+        {ngNotify.set('Cantidad Invalida', 'error');}
+      }
   	}
     $scope.rest=function(item,modal)
     {

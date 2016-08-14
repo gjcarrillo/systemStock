@@ -14,7 +14,7 @@ angular.module('systemStockApp')
     $scope.fact=[{id:"001",cedula:"19296069",nombre:"Oscar",apellido:"Perez"},{id:"002",cedula:"19296069",nombre:"Jose",apellido:"Perez"},{id:"003",cedula:"19296069",nombre:"Julio",apellido:"Perez"}];
 
     $scope.ShowFactura=function(datos){
-    	alert("Aqui va la factura con todos los datos y el form plantilla");
+    	alert("");
     }
 
   }]);
