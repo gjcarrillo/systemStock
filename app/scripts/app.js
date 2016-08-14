@@ -37,6 +37,11 @@ angular
         controller: 'VentasCtrl',
         controllerAs: 'ventas'
       })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'VentasCtrl',
+        controllerAs: 'ventas'
+      })
       .otherwise({
         redirectTo: '/inventario'
       });
