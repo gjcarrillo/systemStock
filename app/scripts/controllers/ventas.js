@@ -18,7 +18,7 @@ angular.module('systemStockApp')
           if (response.data.mensaje == "success")
           {$scope.items=response.data.data} 
           else
-          {alert(response.data);}
+            {ngNotify.set(response.data, 'error');}
           });
   	
    	$scope.rest=function(item,modal)
