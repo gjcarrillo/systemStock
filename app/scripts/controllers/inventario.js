@@ -85,7 +85,7 @@ angular.module('systemStockApp')
   	}
   	$scope.add=function(nuevo)
   	{	
-      var data =[{name: nuevo.name},{mount:nuevo.mount}];
+      var data =[{name: nuevo.name},{price:nuevo.price},{mount:nuevo.mount}];
       $http.post('controllers/addController.php',data)
           .then(function(response) 
           {
@@ -93,9 +93,10 @@ angular.module('systemStockApp')
           if (response.data.mensaje == "success")
           { 
             ngNotify.set('Producto agregado con exito');
-          $scope.items.push({id:response.data.id,name:nuevo.name,mount:nuevo.mount});
+          $scope.items.push({id:response.data.id,name:nuevo.name,price:nuevo.price,mount:nuevo.mount});
           $scope.nuevo.name='';
           $scope.nuevo.mount='';
+          $scope.nuevo.price='';
          } 
           else
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
