@@ -89,6 +89,8 @@ angular.module('systemStockApp')
   	}
   	$scope.add=function(nuevo)
   	{	
+      if(nuevo.name!='' && nuevo.price!='' && nuevo.mount!='')
+      {
       var data =[{name: nuevo.name},{price:nuevo.price},{mount:nuevo.mount}];
       $http.post('controllers/addController.php',data)
           .then(function(response) 
@@ -107,5 +109,9 @@ angular.module('systemStockApp')
           });
 
   	}	
+    else{
+      alert("error");
+    }
+  }
 
   }]);

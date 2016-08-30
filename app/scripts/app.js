@@ -10,12 +10,7 @@
  */
 angular
   .module('systemStockApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
     'ui.bootstrap',
     'ngNotify'
     
@@ -43,6 +38,6 @@ angular
         controllerAs: 'ventas'
       })
       .otherwise({
-        redirectTo: '/inventario'
+        redirectTo: '/home'
       });
   });
