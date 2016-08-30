@@ -7,20 +7,33 @@
   </div>
   <div class="row">
   <div uib-collapse="isCollapsed">
-    <div class="well well-lg">
-        <div class="input-group">
-          <span class="input-group-addon">Nombre</span>
-          <input ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto">
+    <div class="panel panel-primary" style="background-color: #23BAB5!important">
+      <div class="panel-heading" style="background-color: #23BAB5!important; border-color: #23BAB5!important"><h4>Nuevo Producto</h4></div>
+        <div class="well well-lg">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-xs-12">
+              <div class="input-group">
+                <span class="input-group-addon">Nombre</span>
+                <input ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xs-12">
+              <div class="input-group">
+                <span class="input-group-addon">Cantidad</span>
+                <input ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
+              </div>
+              </div>
+            <div class="col-md-3 col-lg-3 col-xs-12">
+              <div class="input-group">
+                <span class="input-group-addon">Precio</span>
+                <input ng-model="nuevo.precio" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xs-12">
+                <button ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
+            </div>
+          </div>
         </div>
-        <div class="input-group">
-          <span class="input-group-addon">Cantidad</span>
-          <input ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Cantidad del producto">
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon">Precio</span>
-          <input ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto">
-        </div>
-      <button ng-click="add(nuevo)" class="btn btn info right">Agregar</button>
     </div>
   </div>
   <div class="col-md-10 col-lg-10 col-xs-12 col-md-offset-1 col-lg-offset-1 ">
