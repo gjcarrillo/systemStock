@@ -6,7 +6,7 @@ include_once '../DBconexion/Conf.class.php';
 
 $data = json_decode(file_get_contents("php://input"));
 $bd=Db::getInstance();
-$sql="INSERT INTO inventario (name,mount) VALUES ('".$data[0]->name."','".$data[1]->mount."')";
+$sql="INSERT INTO inventario (name,price,mount) VALUES ('".$data[0]->name."','".$data[1]->price."','".$data[2]->mount."')";
 $respon=$bd->ejecutar($sql);
 $sql="SELECT id FROM inventario WHERE name='".$data[0]->name."'";
 $respon=$bd->ejecutar($sql);
