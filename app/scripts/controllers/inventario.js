@@ -12,9 +12,9 @@ angular.module('systemStockApp')
 
   	$scope.isCollapsed=true;
   	console.log($scope.isCollapsed);
-
+    $scope.nuevo={};
     $scope.items='';
-    $http.get('controllers/getController.php')
+    $http.get('controllers/inventario/getController.php')
           .then(function(response) 
           {
           console.log(response.data)
@@ -29,7 +29,7 @@ angular.module('systemStockApp')
   	{
       if (parseInt(modal.change)>0){
         var data =[{id: item.id},{mount:parseInt(item.mount)+parseInt(modal.change)}];
-        $http.post('controllers/updateController.php',data)
+        $http.post('controllers/inventario/updateController.php',data)
             .then(function(response)
             {
             console.log(response.data)
@@ -54,13 +54,13 @@ angular.module('systemStockApp')
       else
       {
       var data =[{id: item.id},{mount:item.mount-modal.change}];
-      $http.post('controllers/updateController.php',data)
+      $http.post('controllers/inventario/updateController.php',data)
           .then(function(response) 
           {
           console.log(response.data)
           if (response.data.mensaje == "success")
           {
-            ngNotify.set('Vendido Con exito');
+            ngNotify.set('Ha decrementado el inventario');
             item.mount-=modal.change;
             modal.change='';
           } 
@@ -74,7 +74,7 @@ angular.module('systemStockApp')
   	$scope.delete=function(item,index)
   	{
       var data =[{id: item.id}];
-      $http.post('controllers/deleteController.php',data)
+      $http.post('controllers/inventario/deleteController.php',data)
           .then(function(response) 
           {
           console.log(response.data)
@@ -89,10 +89,7 @@ angular.module('systemStockApp')
   	}
   	$scope.add=function(nuevo)
   	{	
-      if(nuevo.name!='' && nuevo.price!='' && nuevo.mount!='')
-      {
-      var data =[{name: nuevo.name},{price:nuevo.price},{mount:nuevo.mount}];
-      $http.post('controllers/addController.php',data)
+      $http.post('controllers/inventario/addController.php',nuevo)
           .then(function(response) 
           {
           console.log(response)
@@ -108,10 +105,6 @@ angular.module('systemStockApp')
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
           });
 
-  	}	
-    else{
-      alert("error");
-    }
-  }
+  	}
 
   }]);

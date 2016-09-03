@@ -1,4 +1,4 @@
-<?php ob_start();require_once("../lib/dompdf/dompdf_config.inc.php");?>
+<?php ob_start();require_once("../../lib/dompdf/dompdf_config.inc.php");?>
 	<!DOCTYPE html>
 	<html>
 		<head>
@@ -62,6 +62,7 @@ font-family: 'Roboto', sans-serif;
 			</style>
 		</head>
 		<body>
+		<?php $data = json_decode(file_get_contents("php://input")); ?>
 		<!-- <u></u> -->
 			<div class="border" style="padding: 6px">
 				<div class="top">

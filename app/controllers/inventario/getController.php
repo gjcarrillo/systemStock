@@ -1,8 +1,8 @@
 <?php 
 
-include_once '../DBconexion/DB.class.php';
+include_once '../../DBconexion/DB.class.php';
 /*Incluimos el fichero de la clase Conf*/
-include_once '../DBconexion/Conf.class.php';
+include_once '../../DBconexion/Conf.class.php';
 
 $data = json_decode(file_get_contents("php://input"));
 $bd=Db::getInstance();
@@ -14,7 +14,7 @@ if($respon)
 	{
 		$item= array('id' => $x['id'],
 		             'name'=> $x['name'],
-		             'price'=>$x['price'],
+		             //'price'=>$x['price'],
 		             'mount'=>$x['mount']);
 		$arrayItems[]=$item;
 	}

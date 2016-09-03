@@ -11,7 +11,7 @@ angular.module('systemStockApp')
   .controller('VentasCtrl',['$scope','$http','ngNotify', function ($scope,$http,ngNotify) {
    
     $scope.items='';
-    $http.get('controllers/getController.php')
+    $http.get('controllers/inventario/getController.php')
           .then(function(response) 
           {
           console.log(response.data)
@@ -30,7 +30,7 @@ angular.module('systemStockApp')
       else
       {
       var data =[{id: item.id},{mount:item.mount-modal.change}];
-      $http.post('controllers/updateController.php',data)
+      $http.post('controllers/inventario/updateController.php',data)
           .then(function(response) 
           {
           console.log(response.data)
