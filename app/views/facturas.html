@@ -81,13 +81,13 @@
                           <th>Fecha</th>
                         </tr>
                         <tr>
-                          <td><input value="{{modal.fecha}}" class="col-xs-12 col-sm-12 col-lg-12" readonly type="text" name="dia"></td>
+                          <td><input value="{{modal.fecha}}" class="col-xs-12 col-sm-12 col-lg-12" readonly type="text" name="dia" disabled></td>
                         </tr>
                         <tr >
                           <th colspan="3">ORDEN DE REPARACION</th>
                         </tr>
                         <tr >
-                          <td colspan="3"><input value="{{modal.id}}" class="col-xs-12 col-sm-12 col-lg-12" readonly type="text" name="año"></td>
+                          <td colspan="3"><input value="{{modal.id}}" class="col-xs-12 col-sm-12 col-lg-12" readonly type="text" name="año" disabled></td>
                         </tr>
                       </tbody>
                     </table>
@@ -97,41 +97,41 @@
               <div class="box">
               <div class="col-xs-4 col-sm-4 col-lg-4">
                 <label for="Cliente-label" id="Cliente-label" class="Cliente col-xs-2 col-sm-2 col-lg-2  no-mp">Cliente:</label>
-                <input value="{{modal.cliente}}" type="text" id="Cliente" name="Cliente" class="col-xs-10 col-sm-10 col-lg-10  no-mp">
+                <input value="{{modal.cliente}}" type="text" id="Cliente" name="Cliente" class="col-xs-10 col-sm-10 col-lg-10  no-mp" disabled>
               </div>
               <div class="col-xs-2 col-sm-2 col-lg-2">
                 <label for="CI-label" id="CI-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">C.I:</label>
-                <input value="{{modal.ci}}" type="text" id="CI" name="CI" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <input value="{{modal.ci}}" type="text" id="CI" name="CI" class="col-xs-10 col-sm-10 col-lg-10 no-mp" disabled>
               </div>
               <div class="col-xs-4 col-sm-4 col-lg-4">
                 <label for="Telfono-label" id="Telfono-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Telefono:</label>
-                <input value="{{modal.tlf}}" type="text" id="Telfono" name="Telefono" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <input value="{{modal.tlf}}" type="text" id="Telfono" name="Telefono" class="col-xs-10 col-sm-10 col-lg-10 no-mp" disabled>
               </div>
               <div class="col-xs-2 col-sm-2 col-lg-2">
                 <label for="Cel-label" id="Cel-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Cel:</label>
-                <input value="{{modal.cel}}" type="text" id="Cel" name="" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <input value="{{modal.cel}}" type="text" id="Cel" name="" class="col-xs-10 col-sm-10 col-lg-10 no-mp" disabled>
               </div>
               <div class="col-xs-12 col-sm-12 col-lg-12">
                 <label for="Equipo-label" id="Equipo-label" class="col-xs-1 col-sm-1 col-lg-1 no-mp">Equipo:</label>
-                <input value="{{modal.equipo}}" type="text" id="Equipo" name="Equipo" class="col-xs-11 col-sm-11 col-lg-11 no-mp">
+                <input value="{{modal.equipo}}" type="text" id="Equipo" name="Equipo" class="col-xs-11 col-sm-11 col-lg-11 no-mp" disabled>
               </div>
               <div class="col-xs-4 col-sm-4 col-lg-4">
-                <label for="Otro-A-label" id="Otro-A-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Otro:</label>
-                <input value="{{modal.otro}}" type="text" id="Otro-A" name="Otro-A" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <label for="Otro-A-label" id="Otro-A-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Otro:</label>
+                <input value="{{modal.otro}}" type="text" id="Otro-A" name="Otro-A" class="col-xs-8 col-sm-8 col-lg-8 no-mp" disabled>
               </div>
               <div class="col-xs-4 col-sm-4 col-lg-4">
-                <label for="Modelo-label" id="Modelo-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Modelo:</label>
-                <input value="{{modal.modelo}}" type="text" id="Modelo" name="Modelo" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <label for="Modelo-label" id="Modelo-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Modelo:</label>
+                <input value="{{modal.modelo}}" type="text" id="Modelo" name="Modelo" class="col-xs-10 col-sm-8 col-lg-8 no-mp" disabled>
               </div>
               <div class="col-xs-4 col-sm-4 col-lg-4">
-                <label for="Serial-label" id="Serial-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Serial:</label>
-                <input value="{{modal.serial}}" type="text" id="Serial" name="Serial" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+                <label for="Serial-label" id="Serial-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Serial:</label>
+                <input value="{{modal.serial}}" type="text" id="Serial" name="Serial" class="col-xs-8 col-sm-8 col-lg-8 no-mp" disabled>
               </div>
             <!-- BATERIA, MODELO, TAPA, RECLAMO GATANTIA -->
               <div class="col-xs-3 col-sm-3 col-lg-3">
                 <label for="Bateria-label" id="Bateria-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Batería:</label>
                 <div class="col-xs-9 col-sm-9 col-lg-9 no-mp">
-                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                    <div class="col-xs-3 col-sm-3 col-lg-3">
                       <input value="{{modal.bateria}}">
                     </div>
                 </div>
@@ -139,26 +139,25 @@
               <div class="col-xs-3 col-sm-3 col-lg-3">
                 <label for="Sim-label" id="Sim-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Sim:</label>
                 <div class="col-xs-9 col-sm-9 col-lg-9 no-mp">
-                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                    <div class="col-xs-3 col-sm-3 col-lg-3">
                     <input value="{{modal.sim}}">
                     </div>
                 </div>        
               </div>
               <div class="col-xs-3 col-sm-3 col-lg-3">
-                <label for="Tapa-label" id="Tapa-label" class="col-xs-6 col-sm-6 col-lg-6 no-mp">Tapa:</label>
+                <label for="Tapa-label" id="Tapa-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Tapa:</label>
                 <div class="col-xs-6 col-sm-6 col-lg-6 no-mp">
-                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                    <div class="col-xs-1 col-sm-1 col-lg-1">
                     <input   value="{{modal.tapa}}">
                     </div>
                 </div>        
               </div>
               <div class="col-xs-3 col-sm-3 col-lg-3">
-                <label for="ReclamaGatantia-label" id="ReclamaGatantia-label" class="col-xs-6 col-sm-6 col-lg-6 no-mp">Reclama gatantía:</label>
-                <div class="col-xs-6 col-sm-6 col-lg-6 no-mp">
-                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                <label for="ReclamaGatantia-label" id="ReclamaGatantia-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Reclama gatantía:</label>
+                    <div class="col-xs-1 col-sm-1 col-lg-1">
                     <input value="{{modal.bateria}}">
                     </div>
-                </div>        
+             
               </div>
               <div class="col-xs-12 col-sm-12 col-lg-12">
                 <label for="Otros-label" id="Otros-label" class="col-xs-1 col-sm-1 col-lg-1 no-mp">Otros:</label>
