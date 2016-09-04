@@ -33,9 +33,7 @@ angular
         controllerAs: 'ventas'
       })
       .when('/home', {
-        templateUrl: 'views/home.html',
-        controller: 'VentasCtrl',
-        controllerAs: 'ventas'
+        templateUrl: 'views/home.html'
       })
       .otherwise({
         redirectTo: '/home'

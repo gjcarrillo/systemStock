@@ -57,6 +57,19 @@ angular.module('systemStockApp')
             $scope.fact.push({id:response.data.id,cedula:data.ci,cliente:data.cliente,cel:data.cel,fecha:response.data.fecha});
             $scope.isCollapsed=true;
             console.log($scope.isCollapsed);
+            data.id=response.data.id;
+            data.fecha=response.data.fecha;
+          $http.post('controllers/facturas/facturaPDF.php',data)
+          .then(function(response) 
+          {
+          console.log(response);
+          if (response.data.mensaje == "success")
+          { 
+            ngNotify.set('Descargando Factura');
+         } 
+          else
+          {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
+          });
          } 
           else
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
