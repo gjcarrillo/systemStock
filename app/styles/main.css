@@ -21,6 +21,9 @@ body {
 .thead-inverse > tr > th{
 	text-align: center;
 }
+.table>tbody>tr>td{
+    vertical-align: middle;
+}
 tr:hover{
 	background-color:  rgb(35, 186, 181);
 	color: black;
