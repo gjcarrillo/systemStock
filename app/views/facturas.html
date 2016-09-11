@@ -50,14 +50,20 @@
    </div>
   </div>
 
-
-
 <!-- START MODAL FACTURA -->
 
 <div  ng-show="modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
       <div class="panel panel-primary" style="background-color: #23BAB5!important">
-        <div class="panel-heading" style="background-color: #23BAB5!important; border-color: #23BAB5!important"><h4>Factura Nº{{modal.id}}</h4></div>
+        <div class="panel-heading modal-title" id="myModalLabel" style="background-color: #23BAB5!important; border-color: #23BAB5!important">
+          <div class="modal-header">
+            <span  style="font-size: 1.5em; color: #fff;">Factura Nº{{modal.id}}</span> 
+            <button type="button" class="close" ng-click="clear()" data-dismiss="modal" aria-label="Close">
+              <span class="aria-hidden" aria-hidden="true" style="width: 100px; height: 100px">&times;</span>
+            </button>
+          </div>
+        </div>
+
         <div class="well well-lg">
             <div class="row">
               <div class="modal-content">
@@ -68,10 +74,10 @@
                   <h4 class="modal-title" id="myModalLabel">Factura</h4>
                 </div>
                 <div class="modal-body">
-                <button ng-click="classmodificar = !classmodificar">Modificar</button>
-                <button ng-show="classmodificar" data-dismiss="modal" ng-click="delete(model)" >Eliminar</button>
+                <button class="btn btn-success" ng-click="classmodificar = !classmodificar">Modificar</button>
+                <button ng-show="classmodificar" class="btn btn-danger" data-dismiss="modal" ng-click="delete(model)" >Eliminar</button>
                 
-                <button ng-show="!classmodificar" ng-click="update(model)" data-dismiss="modal"> Guardar Modificaciones</button>
+                <button ng-show="!classmodificar" class="btn btn-danger" ng-click="update(model)" data-dismiss="modal"> Guardar Modificaciones</button>
                 <!-- Open modal body -->
                     <div class="col-xs-12 col-sm-12 col-lg-12 top">
                           <div class="col-xs-8 col-sm-8 col-lg-8 center-text">
@@ -226,8 +232,6 @@
                             </div>  
                           </div>  
                     </div>
-                  </div>
-
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -44,42 +44,45 @@
           <span class="input-group-addon"><i class="fa fa-search fa-lg"></i></span>
           <input ng-model="search" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Buscar producto">
         </div>
+
         <div class="table table-responsive ">
           <table class="table stacktable">
-          <tr>
-            <th >ARTICULO</th>
-            <th >PRECIO</th>
-            <th >DISPONIBLE</th>
-            <th >CANTIDAD</th>
-            <th >ACCIONES</th>
-          </tr>
-          <tbody  ng-repeat="item in items | filter:search" >
-            <tr >
-              <td class="col-sm-2 col-md-2 col-lg-2">{{item.name}}</td>
-              <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.price}}" disabled></td>
-              <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.mount}}" disabled></td>
-              <td class="col-sm-2 col-md-2 col-lg-2"><input  class="col-sm-12 col-md-12 col-lg-12"type="number" ng-model="modal.change" type="text"></td>
-              <td class="col-sm-6 col-md-6 col-lg-6">        
-                  <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="sum(item,modal)"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i><span class="namebutton"> Adicionar</span></button>
-                  <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="rest(item,modal)"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Descontar</span></button>
-                  <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="delete(item,$index)"><i class="fa fa-times-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Eliminar</span></button>
-              </td>
-            </tr>
-          </tbody>
+            <thead class="thead-inverse">
+              <tr>
+                <th >ARTICULO</th>
+                <th >PRECIO</th>
+                <th >DISPONIBLE</th>
+                <th >CANTIDAD</th>
+                <th >ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody  ng-repeat="item in items | filter:search" >
+              <tr >
+                <td class="col-sm-2 col-md-2 col-lg-2">{{item.name}}</td>
+                <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.price}}" disabled></td>
+                <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.mount}}" disabled></td>
+                <td class="col-sm-2 col-md-2 col-lg-2"><input  class="col-sm-12 col-md-12 col-lg-12" type="number" ng-model="modal.change" type="text"></td>
+                <td class="col-sm-6 col-md-6 col-lg-6">        
+                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="sum(item,modal)"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i><span class="namebutton"> Adicionar</span></button>
+                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="rest(item,modal)"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Descontar</span></button>
+                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="delete(item,$index)"><i class="fa fa-times-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Eliminar</span></button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
     </div>
     <style type="text/css" media="screen">
-      td,input{
-        padding: 3px !important;
-      }
-      th{
-        text-align: center;
-      }
-      @media (max-width: 1350px){
-      .namebutton{
-        display: none;
-      }
+        td,input{
+          padding: 3px !important;
+        }
+        th{
+          text-align: center;
+        }
+        @media (max-width: 1350px){
+        .namebutton{
+          display: none;
+        }
       }
     </style>
 </div>
