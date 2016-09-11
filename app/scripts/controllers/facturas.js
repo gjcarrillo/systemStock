@@ -12,8 +12,13 @@ angular.module('systemStockApp')
     $scope.isCollapsed=true;
   	console.log($scope.isCollapsed);
     $scope.fact='';
-    
-
+    $scope.classmodificar=true;
+    console.log($scope.classmodificar);
+    $scope.modificar= function()
+    {
+      $scope.classmodificar=false;
+      console.log($scope.classmodificar);
+    }
      $http.post('controllers/facturas/getController.php')
           .then(function(response) 
           {
@@ -26,9 +31,11 @@ angular.module('systemStockApp')
           else
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
           });
+    
 
     $scope.abrir = function (factura){
       $scope.modal='';
+
       //alert(factura.id);
      $http.post('controllers/facturas/findController.php',factura)
           .then(function(response) 
