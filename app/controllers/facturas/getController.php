@@ -6,7 +6,7 @@ include_once '../../DBconexion/Conf.class.php';
 
 $data = json_decode(file_get_contents("php://input"));
 $bd=Db::getInstance();
-$sql="SELECT id_orden,cliente,ci,create_date,cel FROM facturas";
+$sql="SELECT id_orden,cliente,ci,create_date,cel FROM facturas ORDER BY create_date DESC";
 $respon=$bd->ejecutar($sql);
 if($respon)
 { 
@@ -14,7 +14,7 @@ if($respon)
 	{
 		$fecha= new datetime($x['create_date']);
 		$item= array('id' => $x['id_orden'],
-					 'cedula'=>$x['ci'],
+					 'ci'=>$x['ci'],
 		             'cliente'=> $x['cliente'],
 		             'cel'=>$x['cel'],
 		             'fecha'=>$fecha->format('d-M-Y')
