@@ -35,7 +35,7 @@ if($respon)
 		             'total'=>$x['total'],
 		             'abono'=>$x['abono'],
 		             'resta'=>$x['resta'],
-		             'fecha'=>$fecha->format('d-M-y')
+		             'fecha'=>$fecha->format('d-M-Y')
 		             );
 	$array['data']=$item;
 	$array['mensaje']= "success";
