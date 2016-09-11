@@ -67,7 +67,10 @@
                   <h4 class="modal-title" id="myModalLabel">Factura</h4>
                 </div>
                 <div class="modal-body">
-                <button ng-click="classmodificar = !classmodificar"> modificar</button>
+                <button ng-click="classmodificar = !classmodificar">Modificar</button>
+                <button ng-show="classmodificar" >Eliminar</button>
+                
+                <button ng-show="!classmodificar"> Guardar Modificaciones</button>
                 <!-- Open modal body -->
                     <div class="col-xs-12 col-sm-12 col-lg-12 top">
                           <div class="col-xs-8 col-sm-8 col-lg-8 center-text">
