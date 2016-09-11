@@ -1,3 +1,4 @@
+
 <style type="text/css" media="screen">
 	.center-text{
 		text-align: center;
@@ -22,166 +23,186 @@
 	.none-padding{
 		padding: 0px!important;
 	}
-	.no-mp{
+	.form-control{
+		margin: 0px!important;
+		padding: 0px !important;
+	
+	}
+	.input-group-addon,.input-group{
 		margin: 0px!important;
 		padding: 0px!important;
-		margin-bottom: 10px !important;
+		margin-bottom: 10px!important;
 	}
 	.input-group-addon{
-		font-size: 1em !important;
-		width: 10px !important;
-		height: 10px !important;
+		background-color: #23BAB5;
+		color: #fff;
+    	font-weight: 700;
 	}
 	.top{
 		margin-bottom: 20px !important;
 	}
+	.form-group{
+		width: 100%!important;
+	}
+	.input-group[class*=col-] {
+		float: left;
+	}
+@media (min-width: 768px){
+
+	.form-inline .input-group .input-group-addon {
+	    width: 100px;
+	}
+}
+
 </style>
 	<!-- TOP -->
-	<div class="factura">
-		<!-- MID -->
+	<div uib-collapse="isCollapsed">
+    <div class="panel panel-primary" style="background-color: #23BAB5!important">
+      <div class="panel-heading" style="background-color: #23BAB5!important; border-color: #23BAB5!important"><h4>Nueva Factura</h4></div>
+        <div class="well well-lg">
+          <div class="row">
 		<div class="box">
 			<div class="col-xs-12 col-sm-12 col-lg-12">
-				<div class="col-xs-4 col-sm-4 col-lg-4">
-					<label for="Cliente-label" id="Cliente-label" class="Cliente col-xs-2 col-sm-2 col-lg-2  no-mp">Cliente:</label>
-					<input ng-model="data.cliente" type="text" id="Cliente" name="Cliente" class="col-xs-10 col-sm-10 col-lg-10  no-mp">
+				<div class="input-group col-lg-3 col-sm-6 col-sx-12">
+				    <div class="input-group-addon"><span>Cliente*</span></div>
+					<input ng-model="data.cliente" type="text" id="Cliente" name="Cliente" class="form-control">
 				</div>
-				<div class="col-xs-2 col-sm-2 col-lg-2">
-					<label for="CI-label" id="CI-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">C.I:</label>
-					<input ng-model="data.ci" type="text" id="CI" name="CI" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+
+				<div class="input-group col-lg-3 col-sm-6 col-sx-12">
+				    <div class="input-group-addon"><span>CI*</span></div>
+					<input ng-model="data.ci" type="text" id="CI" name="CI" class="form-control">
 				</div>
-				<div class="col-xs-4 col-sm-4 col-lg-4">
-					<label for="Telfono-label" id="Telfono-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Telefono:</label>
-					<input ng-model="data.telefono" type="text" id="Telfono" name="Telefono" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+
+				<div class="input-group col-lg-3 col-sm-6 col-sx-12">
+				    <div class="input-group-addon"><span>Telefono*</span></div>
+					<input ng-model="data.telefono" type="text" id="Telfono" name="Telefono" class="form-control">
 				</div>
-				<div class="col-xs-2 col-sm-2 col-lg-2">
-					<label for="Cel-label" id="Cel-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Cel:</label>
-					<input ng-model="data.cel" type="text" id="Cel" name="" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+
+				<div class="input-group col-lg-3 col-sm-6 col-sx-12">
+				    <div class="input-group-addon"><span>Cel*</span></div>
+					<input ng-model="data.cel" type="text" id="Cel" name="" class="form-control">
 				</div>
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					<label  for="Equipo-label" id="Equipo-label" class="col-xs-1 col-sm-1 col-lg-1 no-mp">Equipo:</label>
-					<input ng-model="data.equipo" type="text" id="Equipo" name="Equipo" class="col-xs-11 col-sm-11 col-lg-11 no-mp">
+
+				<div class="input-group col-lg-12 col-sm-12 col-sx-12">
+				    <div class="input-group-addon"><span>Equipo*</span></div>
+					<input ng-model="data.equipo" type="text" id="Equipo" name="Equipo" class="form-control">
 				</div>
-				<div class="col-xs-4 col-sm-4 col-lg-4">
-					<label for="Otro-A-label" id="Otro-A-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Otro:</label>
-					<input ng-model="data.otro" type="text" id="Otro-A" name="Otro-A" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
+
+				<div class="input-group col-lg-4 col-sm-4 col-sx-12">
+				    <div class="input-group-addon"><span>Otro*</span></div>
+					<input ng-model="data.otro" type="text" id="Otro-A" name="Otro-A" class="form-control">
+				</div>				
+				<div class="input-group col-lg-4 col-sm-4 col-sx-12">
+				    <div class="input-group-addon"><span>Modelo*</span></div>
+					<input ng-model="data.modelo" type="text" id="Modelo" name="Modelo" class="form-control">
 				</div>
-				<div class="col-xs-4 col-sm-4 col-lg-4">
-					<label for="Modelo-label" id="Modelo-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Modelo:</label>
-					<input ng-model="data.modelo" type="text" id="Modelo" name="Modelo" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
-				</div>
-				<div class="col-xs-4 col-sm-4 col-lg-4">
-					<label for="Serial-label" id="Serial-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Serial:</label>
-					<input ng-model="data.serial" type="text" id="Serial" name="Serial" class="col-xs-10 col-sm-10 col-lg-10 no-mp">
-				</div>
-			<!-- BATERIA, MODELO, TAPA, RECLAMO GATANTIA -->
-	 			<div class="col-xs-3 col-sm-3 col-lg-3">
-					<label for="Bateria-label" id="Bateria-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Batería:</label>
-					<div class="col-xs-9 col-sm-9 col-lg-9 no-mp">
-	    					<select  ng-model="data.bateria">
-		      					<option value="SI">SI</option>
-		      					<option value="NO">NO</option>
-		    				</select>
-					</div>
-				</div>
-	 			<div class="col-xs-3 col-sm-3 col-lg-3">
-					<label for="Sim-label" id="Sim-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Sim:</label>
-					<div class="col-xs-9 col-sm-9 col-lg-9 no-mp">
-						  <select  ng-model="data.sim">
-	      					<option value="SI">SI</option>
-	      					<option value="NO">NO</option>
-	    				  </select>
-					
-					</div>				
-				</div>
-				<div class="col-xs-3 col-sm-3 col-lg-3">
-					<label for="Tapa-label" id="Tapa-label" class="col-xs-6 col-sm-6 col-lg-6 no-mp">Tapa:</label>
-					<div class="col-xs-6 col-sm-6 col-lg-6 no-mp">
-						  <select  ng-model="data.tapa">
-	      					<option value="SI">SI</option>
-	      					<option value="NO">NO</option>
-	    				 </select>
-					</div>				
-				</div>
-				<div class="col-xs-3 col-sm-3 col-lg-3">
-					<label for="ReclamaGatantia-label" id="ReclamaGatantia-label" class="col-xs-6 col-sm-6 col-lg-6 no-mp">Reclama gatantía:</label>
-					<div class="col-xs-6 col-sm-6 col-lg-6 no-mp">
-						  <select  ng-model="data.garantia">
-	      					<option value="SI">SI</option>
-	      					<option value="NO">NO</option>
-	    				  </select>
-					</div>				
-				</div>
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					<label for="Otros-label" id="Otros-label" class="col-xs-1 col-sm-1 col-lg-1 no-mp">Otros:</label>
-					
-				</div> 
-				<!-- FALLA DE EL EQUIPO: NO INICIA, NO TRANSMITE; AUDIO, SE APAGA, SEÑAL -->
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					<label for="Falla-Equipo-No-Inicia-label" id="Falla-Equipo-No-Inicia-label" class="col-xs-2 col-sm-2 col-lg-2 no-mp">Falla de el Equipo:</label>
-					<div class="col-xs-10 col-sm-10 col-lg-10">
-						   <select class="col-xs-12 col-sm-12 col-lg-12" name="multipleSelect" id="multipleSelect" ng-model="data.fallaequipo" multiple>
-      						<option class="col-xs-2 col-sm-2 col-lg-2" value="No inicia">No inicia</option>
-      						<option class="col-xs-2 col-sm-2 col-lg-2" value="No transmite">No transmite</option>
-      						<option class="col-xs-2 col-sm-2 col-lg-2" value="Audio">Audio</option>
-      						<option class="col-xs-2 col-sm-2 col-lg-2" value="Se apaga">Se apaga</option>
-      						<option class="col-xs-2 col-sm-2 col-lg-2" value="Señal">Señal</option>
-   						 </select>
-					</div>
-				</div> 
-				<!-- OTROS: -->
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					<label for="Otro-B-label" id="Otro-B-label" class="col-xs-3 col-sm-3 col-lg-3 no-mp">Otro: Descripcion de la falla:</label>
-					<input ng-model="data.otros" type="text" id="Otro-B" name="Otro-B" class="col-xs-6 col-sm-6 col-lg-6 no-mp">
-						<div class="col-xs-3 col-sm-3 col-lg-3">
-							<select  ng-model="data.fallaestatus" class="col-xs-12 col-sm-12 col-lg-12 ">
-	      					<option value="Intermitente">Intermitente</option>
-	      					<option value="Permanente">Permanente</option>
-	    					</select>
-						</div>
-				</div> 
-				<!-- INTERMINENTE, PERMANENTE, ESTADP DE LA CARCASA Y/O PANTALLA, ROTA, REGULAR, RAYADA, BUENA -->
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					<div class="col-xs-2 col-sm-2 col-lg-4 no-mp">
-					    <label>Estado de la Carcasa:</label>
-					</div>					
-					<div class="col-xs-2 col-sm-2 col-lg-2	 no-mp">
-						<select  ng-model="data.carcasaestatus">
-	      				<option value="Rota">Rota</option>
-	      				<option value="Regular">Regular</option>
-	      				<option value="Rayada">Rayada</option>
-	      				<option value="Buena">Buena</option>
-	    				</select>
-					</div>
-					<div class="col-xs-2 col-sm-2 col-lg-4 no-mp">
-					    <label>Estado de la Pantalla:</label>
-					</div>					
-					<div class="col-xs-2 col-sm-2 col-lg-2	 no-mp">
-						<select  ng-model="data.pantallaestatus">
-	      				<option value="Rota">Rota</option>
-	      				<option value="Regular">Regular</option>
-	      				<option value="Rayada">Rayada</option>
-	      				<option value="Buena">Buena</option>
-	    				</select>
-					</div>				
+
+				<div class="input-group col-lg-4 col-sm-4 col-sx-12">
+				    <div class="input-group-addon"><span>Serial*</span></div>
+					<input ng-model="data.serial" type="text" id="Serial" name="Serial" class="form-control">
 				</div>	
-				<div class="col-xs-12 col-sm-12 col-lg-12">
-					
-					<div class="col-xs-3 col-sm-3 col-lg-3">
-						<div class="input-group">
+
+				<div class="input-group col-lg-3 col-sm-3 col-sx-4">
+				    <div class="input-group-addon"><span>Bateria*</span></div>
+					<div class="">
+	    				<select  ng-model="data.bateria">
+		      				<option value="SI">SI</option>
+		      				<option value="NO">NO</option>
+		    			</select>
+					</div>
+				</div>
+
+				<div class="input-group col-lg-3 col-sm-3 col-sx-4">
+				    <div class="input-group-addon"><span>Sim*</span></div>
+					<select  ng-model="data.sim">
+	      				<option value="SI">SI</option>
+	      				<option value="NO">NO</option>
+	    			</select>
+				</div>	
+
+				<div class="input-group col-lg-3 col-sm-3 col-sx-4">
+				    <div class="input-group-addon"><span>Tapa*</span></div>
+					<select  ng-model="data.tapa">
+	      				<option value="SI">SI</option>
+	      				<option value="NO">NO</option>
+	    			</select>
+				</div>	
+
+				<div class="input-group col-lg-3 col-sm-3 col-sx-12">
+				    <div class="input-group-addon"><span>Garantia*</span></div>
+					<select  ng-model="data.garantia">
+	      				<option value="SI">SI</option>
+	      				<option value="NO">NO</option>
+	    			</select>
+				</div>	
+
+				<div class="input-group col-lg-4 col-sm-6 col-sx-12">
+				    <div class="input-group-addon"><span>Falla del Equipo*</span></div>
+					<select class="col-xs-12 col-sm-12 col-lg-12" name="multipleSelect" id="multipleSelect" ng-model="data.fallaequipo" multiple>
+      						<option class="" value="No inicia">No inicia</option>
+      						<option class="" value="No transmite">No transmite</option>
+      						<option class="" value="Audio">Audio</option>
+      						<option class="" value="Se apaga">Se apaga</option>
+      						<option class="" value="Señal">Señal</option>
+      						<option class="" value="Otros">Otros</option>
+   					</select>
+				</div>		
+
+				<div class="input-group col-lg-12 col-sm-12 col-sx-12">
+				    <div class="input-group-addon"><span>Descripcion de la falla:*</span></div>
+					<input ng-model="data.otros" type="text" id="Otro-B" name="Otro-B" class="form-control">
+				</div>			
+
+				<div class="input-group col-lg-3 col-sm-4 col-sx-12">
+					<select  ng-model="data.fallaestatus" class="col-xs-12 col-sm-12 col-lg-12 ">
+						<option value="Intermitente">Intermitente</option>
+						<option value="Permanente">Permanente</option>
+					</select>
+				</div>				
+
+				<div class="input-group col-lg-3 col-sm-4 col-sx-12">
+				    <div class="input-group-addon"><span>Estado de la Carcasa:*</span></div>
+					<select  ng-model="data.carcasaestatus">
+	      				<option value="Rota">Rota</option>
+	      				<option value="Regular">Regular</option>
+	      				<option value="Rayada">Rayada</option>
+	      				<option value="Buena">Buena</option>
+	    			</select>
+				</div>		
+
+				<div class="input-group col-lg-3 col-sm-4 col-sx-12">
+				    <div class="input-group-addon"><span>Estado de la Pantalla:*</span></div>
+					<select  ng-model="data.pantallaestatus">
+	      				<option value="Rota">Rota</option>
+	      				<option value="Regular">Regular</option>
+	      				<option value="Rayada">Rayada</option>
+	      				<option value="Buena">Buena</option>
+	    			</select>
+				</div>		
+					<div class="col-lg-3 col-xs-12 col-sm-12">
+						<div class="input-group col-xs-12 col-sm-12 col-lg-12">
 						  <span class="input-group-addon">Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						  <input ng-model="data.total" type="text" id="Total" class="form-control" placeholder="">
 						</div>
-						<div class="input-group">
+						<div class="input-group col-xs-12 col-sm-12 col-lg-12">
 						  <span class="input-group-addon">Abono:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						  <input ng-model="data.abono" type="text" id="Abono" class="form-control" placeholder="">
 						</div>
-						<div class="input-group">
+						<div class="input-group col-xs-12 col-sm-12 col-lg-12">
 						  <span type="number" min="0" class="input-group-addon">Resta:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						  <input type="text" name="resta" class="form-control" value="{{data.total-data.abono}}" placeholder="">
 					</div>	
-				</div>	
+				</div>								
 			</div>
 			<!-- Falla de el Equipo: -->
-			<button ng-click="guardar(data)">Guardar e imprimir</button>
+			<button class="btn btn-default col-md-2 col-lg-2 right margin-10" ng-click="guardar(data)">Guardar</button>
 		</div>
+
+          </div>
+        </div>
+    </div>
+  </div>
+	<div class="factura">
+		<!-- MID -->
+
 	</div>
