@@ -29,7 +29,7 @@ angular.module('systemStockApp')
 
     $scope.abrir = function (factura){
       $scope.modal='';
-      alert(factura.id);
+      //alert(factura.id);
      $http.post('controllers/facturas/findController.php',factura)
           .then(function(response) 
           {
