@@ -9,7 +9,10 @@
  */
 angular.module('systemStockApp')
   .controller('InventarioCtrl',['$scope','$http','ngNotify', function ($scope,$http,ngNotify) {
-
+  $scope.botao1 = function() {
+   
+   // alert('Ok!');
+  }
   	$scope.isCollapsed=true;
   	console.log($scope.isCollapsed);
     $scope.nuevo={};
