@@ -15,26 +15,26 @@
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Nombre</span>
-                <input name="nombre" ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
+                <input ng-class="{error: producto.nombre.$error.required && producto.nombre.$touched, success: producto.nombre.$valid}" name="nombre" ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
               </div>
-                <span ng-show="producto.nombre.$error.required">Campo requerido</span>
+                <span ng-show="producto.nombre.$error.required && producto.nombre.$touched">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Cantidad</span>
-                <input name="cantidad" ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
+                <input ng-class="{error: producto.cantidad.$error.required && producto.cantidad.$touched, success: producto.cantidad.$valid}" name="cantidad" ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
               </div>
-                <span ng-show="producto.cantidad.$error.required">Campo requerido</span>
+                <span ng-show="producto.cantidad.$error.required && producto.cantidad.$touched">Campo requerido</span>
               </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div ng-class="{error: producto.precio.$error.required}" class="input-group" >
                 <span class="input-group-addon">Precio</span>
-                <input name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
+                <input ng-class="{error: producto.precio.$error.required && producto.precio.$touched, success: producto.precio.$valid  }" name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
               </div>
-              <span ng-show="producto.precio.$error.required">Campo requerido</span>
+              <span ng-show="producto.precio.$error.required && producto.precio.$touched">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
-                <button ng-disable="!producto.$valid" ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
+                <button ng-disabled="!producto.$valid" ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
             </div>
           </div>
         </div>
