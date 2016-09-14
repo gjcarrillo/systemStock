@@ -83,13 +83,13 @@ font-family: 'Roboto', sans-serif;
 									</thead>
 									<tbody class="border">
 										<tr>
-											<td class="center-text border"><span><?php $data->fecha;?></span></u></b></td>
+											<td class="center-text border"><span><?php echo $data->fecha;?></span></u></b></td>
 										</tr>
 										<tr >
 											<th colspan="3" class="center-text border"><span style="font-size:12px">ORDEN DE REPARACION</span></th>
 										</tr>
 										<tr>
-											<td colspan="3" class="center-text border"><span><?php $data->id; ?></span></u></b></td>
+											<td colspan="3" class="center-text border"><span><?php echo $data->id; ?></span></u></b></td>
 										</tr>
 									</tbody>
 								</table>
@@ -109,26 +109,26 @@ font-family: 'Roboto', sans-serif;
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Cliente: <?php $data->cliente; ?></u></b></td>
-								<td><b><u>C.I: <?php $data->ci; ?></u></b></td>
-								<td><b><u>Telefono: <?php $data->telefono; ?></u></b></td>
-								<td><b><u>Cel: <?php $data->cel; ?></u></b></td>
+								<td><b><u>Cliente: <?php echo $data->cliente; ?></u></b></td>
+								<td><b><u>C.I: <?php echo $data->ci; ?></u></b></td>
+								<td><b><u>Telefono: <?php  echo $data->telefono; ?></u></b></td>
+								<td><b><u>Cel: <?php echo $data->cel; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Equipo: <?php $data->equipo; ?></u></b></td>
+								<td><b><u>Equipo: <?php echo $data->equipo; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Otro: <?php $data->otro; ?></u></b></td>
-								<td><b><u>Modelo: <?php $data->modelo; ?></u></b></td>
-								<td><b><u>Serial: <?php $data->serial; ?></u></b></td>
+								<td><b><u>Otro: <?php  echo $data->otro; ?></u></b></td>
+								<td><b><u>Modelo: <?php echo $data->modelo; ?></u></b></td>
+								<td><b><u>Serial: <?php echo $data->serial; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -136,20 +136,20 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Bateria:</u></b></td>
-								<td><b><u><?php $data->bateria; ?></u></b></td>
+								<td><b><u><?php echo $data->bateria; ?></u></b></td>
 								<td><b><u>Sim:</u></b></td>
-								<td><b><u><?php $data->sim; ?></u></b></td>
+								<td><b><u><?php echo $data->sim; ?></u></b></td>
 								<td><b><u>Tapa:</u></b></td>
-								<td><b><u><?php $data->tapa; ?></u></b></td>
+								<td><b><u><?php echo $data->tapa; ?></u></b></td>
 								<td><b><u>Reclama garantia:</u></b></td>
-								<td><b><u><?php $data->garantia; ?></u></b></td>
+								<td><b><u><?php echo $data->garantia; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Otros: <?php $data->otros; ?></u></b></td>
+								<td><b><u>Otros: <?php echo $data->otros; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -157,7 +157,7 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Falla de el Equipo:</u></b></td>
-								<td><b><u><?php $data->fallaequipo; ?> </u></b></td>
+								<td><b><u><?php echo $data->fallaequipo; ?> </u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -173,7 +173,7 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td style="width: 400px">'</u></b></td>
-								<td><b><u><?php $data->fallaestatus; ?> </u></b></td>
+								<td><b><u><?php  echo $data->fallaestatus; ?> </u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -181,7 +181,7 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Estado de la Carcasa:</u></b></td>
-								<td><b><u><?php $data->carcasaestatus; ?></u></b></td>
+								<td><b><u><?php  echo $data->carcasaestatus; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -189,7 +189,7 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Estado de la Pantalla:</u></b></td>
-								<td><b><u><?php $data->pantallaestatus; ?></u></b></td>
+								<td><b><u><?php  echo $data->pantallaestatus; ?></u></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -207,9 +207,9 @@ font-family: 'Roboto', sans-serif;
 								</u></b></td>
 								<td style="">
 									<ul style="list-style: none; padding: 0px; margin: 0px;" >
-										<li class="border">Total: <?php $data->total; ?> </li>
-										<li class="border">Abono: <?php $data->abono; ?> </li>
-										<li class="border">Resta: <?php $data->total-$data->pantallaestatus;?> </li>
+										<li class="border">Total: <?php echo  $data->total; ?> </li>
+										<li class="border">Abono: <?php echo  $data->abono; ?> </li>
+										<li class="border">Resta: <?php echo ($data->total-$data->pantallaestatus);?> </li>
 									</ul>
 								</u></b></td>
 							</tr>

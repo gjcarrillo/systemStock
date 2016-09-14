@@ -68,9 +68,10 @@
             <div class="row">
               <div class="modal-content">
                 <div class="modal-body">
-                <button class="btn btn-success" ng-click="classmodificar = !classmodificar">Modificar</button>
+                <button ng-show="classmodificar" class="btn btn-success" ng-click="classmodificar = !classmodificar">Modificar</button>
                 <button ng-show="classmodificar" class="btn btn-danger" data-dismiss="modal" ng-click="delete(model)" >Eliminar</button>
                 
+                <button ng-show="!classmodificar" ng-click="classmodificar = !classmodificar" class="btn btn-info" >Cancelar</button>
                 <button ng-show="!classmodificar" class="btn btn-danger" ng-click="update(model)" data-dismiss="modal"> Guardar Modificaciones</button>
                 <!-- Open modal body -->
                     <div class="col-xs-12 col-sm-12 col-lg-12 top">

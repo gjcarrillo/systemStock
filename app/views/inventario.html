@@ -6,7 +6,7 @@
       </div>
   </div>
   <div class="row">
-<form data-toggle="validator" role="form">
+<form data-toggle="validator" role="form" name="producto">
   <div uib-collapse="isCollapsed">
     <div class="panel panel-primary" style="background-color: #23BAB5!important">
       <div class="panel-heading" style="background-color: #23BAB5!important; border-color: #23BAB5!important"><h4>Nuevo Producto</h4></div>
@@ -15,23 +15,26 @@
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Nombre</span>
-                <input ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
+                <input name="nombre" ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
               </div>
+                <span ng-show="producto.nombre.$error.required">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Cantidad</span>
-                <input ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
+                <input name="cantidad" ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
               </div>
+                <span ng-show="producto.cantidad.$error.required">Campo requerido</span>
               </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
-              <div class="input-group">
+              <div ng-class="{error: producto.precio.$error.required}" class="input-group" >
                 <span class="input-group-addon">Precio</span>
-                <input ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
+                <input name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
               </div>
+              <span ng-show="producto.precio.$error.required">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
-                <button ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
+                <button ng-disable="!producto.$valid" ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
             </div>
           </div>
         </div>

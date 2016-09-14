@@ -46,3 +46,12 @@ body{
 .padding-2{ padding: 3px!important; }
 .padding-1{ padding: 1px!important; }
 .padding-0{ padding: 0px!important; }
+
+.error
+{
+  border-color: red !important;
+}
+.success
+{
+  border-color: green !important;
+}
