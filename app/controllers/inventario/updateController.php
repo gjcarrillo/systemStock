@@ -6,7 +6,8 @@ include_once '../../DBconexion/Conf.class.php';
 
 $data = json_decode(file_get_contents("php://input"));
 $bd=Db::getInstance();
-$sql="UPDATE inventario SET mount='".$data[1]->mount."' WHERE id='".$data[0]->id."'";
+
+$sql="UPDATE inventario SET mount='".$data->mount."',price='".$data->price."',name='".$data->name."' WHERE id='".$data->id."'";
 $respon=$bd->ejecutar($sql);
 if($respon)
 $array['mensaje']= "success";

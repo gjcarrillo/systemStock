@@ -26,7 +26,7 @@ angular.module('systemStockApp')
           if (response.data.mensaje == "success")
           { console.log(response);
             $scope.fact=response.data.data;
-            ngNotify.set('Sincronizado con exito');
+            //ngNotify.set('Sincronizado con exito');
          } 
           else
           {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
@@ -50,7 +50,7 @@ angular.module('systemStockApp')
           $scope.loading=false;
           console.log($scope.loading,$scope.modal);
             
-            ngNotify.set('Mostrando factura');
+            //ngNotify.set('Mostrando factura');
             $scope.modal=response.data.data;
          }
          else
@@ -120,23 +120,18 @@ angular.module('systemStockApp')
             console.log($scope.isCollapsed);
             data.id=response.data.id;
             data.fecha=response.data.fecha;
-              /*
-              $http.post('controllers/facturas/facturaPDF.php',data)
-              .then(function(response) 
-              {
-              console.log(response);
-              if (response.data.mensaje == "success")
-              { 
-                ngNotify.set('Descargando Factura');
-             } 
-              else
-              {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
-              });*/
+              
          } 
          else
          {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
           });
 
   }
+$scope.imprimir=function(model)
+{
+var data= angular.toJson(model);
+window.open('controllers/facturas/facturaPDF.php?data='+data,'_blank');
+
+}
 
   }]);

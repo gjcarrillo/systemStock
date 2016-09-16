@@ -9,7 +9,7 @@
   <div uib-collapse="isCollapsed">
     <form class="form-inline">
       <div class="form-group">
-       <div ng-include src="'views/factura.html'"></div>
+        <div ng-include src="'views/factura.html'"></div>
       </div>
     </form>
   </div>
@@ -67,17 +67,13 @@
         <div class="well well-lg">
             <div class="row">
               <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="modal-title" id="myModalLabel">Factura</h4>
-                </div>
                 <div class="modal-body">
-                <button class="btn btn-success" ng-click="classmodificar = !classmodificar">Modificar</button>
+                <button ng-show="classmodificar" class="btn btn-success" ng-click="classmodificar = !classmodificar">Modificar</button>
                 <button ng-show="classmodificar" class="btn btn-danger" data-dismiss="modal" ng-click="delete(model)" >Eliminar</button>
+                <button ng-show="classmodificar" class="btn btn-warning" data-dismiss="modal" ng-click="imprimir(modal)" >Imprimir</button>
                 
-                <button ng-show="!classmodificar" class="btn btn-danger" ng-click="update(model)" data-dismiss="modal"> Guardar Modificaciones</button>
+                <button ng-show="!classmodificar" ng-click="classmodificar = !classmodificar" class="btn btn-info" >Cancelar</button>
+                <button ng-show="!classmodificar" class="btn btn-danger" ng-click="update(modal)" data-dismiss="modal"> Guardar Modificaciones</button>
                 <!-- Open modal body -->
                     <div class="col-xs-12 col-sm-12 col-lg-12 top">
                           <div class="col-xs-8 col-sm-8 col-lg-8 center-text">

@@ -1,6 +1,7 @@
 <?php 
 require_once("../../lib/dompdf/dompdf_config.inc.php");
-$data = json_decode(file_get_contents("php://input"));
+$data=json_decode($_GET['data']);
+//$data = json_decode(file_get_contents("php://input"));
 ob_start();
 ?>
 	<!DOCTYPE html>
@@ -76,20 +77,18 @@ font-family: 'Roboto', sans-serif;
 								<table >
 									<thead class="border">
 										<tr>
-											<th class="border">DIA</th>
-											<th class="border">MES</th>
-											<th class="border">AÑO</th>
+											<th class="border">DIA MES AÑO</th>
 										</tr>
 									</thead>
 									<tbody class="border">
 										<tr>
-											<td class="center-text border"><span><?php $data->fecha;?></span></u></b></td>
+											<th class="center-text border" ><span><?php echo $data->fecha;?></span></u></b></th>
 										</tr>
 										<tr >
-											<th colspan="3" class="center-text border"><span style="font-size:12px">ORDEN DE REPARACION</span></th>
+											<th class="center-text border"><span style="font-size:12px">ORDEN DE REPARACION</span></th>
 										</tr>
 										<tr>
-											<td colspan="3" class="center-text border"><span><?php $data->id; ?></span></u></b></td>
+											<td class="center-text border"><span><?php echo $data->id; ?></span></u></b></td>
 										</tr>
 									</tbody>
 								</table>
@@ -109,26 +108,26 @@ font-family: 'Roboto', sans-serif;
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Cliente: <?php $data->cliente; ?></u></b></td>
-								<td><b><u>C.I: <?php $data->ci; ?></u></b></td>
-								<td><b><u>Telefono: <?php $data->telefono; ?></u></b></td>
-								<td><b><u>Cel: <?php $data->cel; ?></u></b></td>
+								<td><b><u>Cliente:</u><?php echo $data->cliente; ?></b></td>
+								<td><b><u>C.I:</u> <?php echo $data->ci; ?></b></td>
+								<td><b><u>Telefono:</u> <?php  echo $data->tlf; ?></b></td>
+								<td><b><u>Cel:</u> <?php echo $data->cel; ?></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Equipo: <?php $data->equipo; ?></u></b></td>
+								<td><b><u>Equipo: </u><?php echo $data->equipo; ?></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Otro: <?php $data->otro; ?></u></b></td>
-								<td><b><u>Modelo: <?php $data->modelo; ?></u></b></td>
-								<td><b><u>Serial: <?php $data->serial; ?></u></b></td>
+								<td><b><u>Otro:</u><?php  echo $data->otro; ?></b></td>
+								<td><b><u>Modelo:</u> <?php echo $data->modelo; ?></b></td>
+								<td><b><u>Serial:</u> <?php echo $data->serial; ?></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -136,20 +135,13 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Bateria:</u></b></td>
-								<td><b><u><?php $data->bateria; ?></u></b></td>
+								<td><b><?php echo $data->bateria; ?></b></td>
 								<td><b><u>Sim:</u></b></td>
-								<td><b><u><?php $data->sim; ?></u></b></td>
+								<td><b><?php echo $data->sim; ?></b></td>
 								<td><b><u>Tapa:</u></b></td>
-								<td><b><u><?php $data->tapa; ?></u></b></td>
+								<td><b><?php echo $data->tapa; ?></b></td>
 								<td><b><u>Reclama garantia:</u></b></td>
-								<td><b><u><?php $data->garantia; ?></u></b></td>
-							</tr>
-						</tbody>
-					</table>
-					<table style="width:100%">
-						<tbody>
-							<tr>
-								<td><b><u>Otros: <?php $data->otros; ?></u></b></td>
+								<td><b><?php echo $data->garantia; ?></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -157,42 +149,35 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Falla de el Equipo:</u></b></td>
-								<td><b><u><?php $data->fallaequipo; ?> </u></b></td>
+								<td><b><?php echo $data->fallaequipo; ?> </b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Otro:</u></b></td>
-								<td><b><u>Descripcion de la falla:</u></b></td>
+								<td><b><u>Otro: Descripcion de la falla:</u> <?php echo $data->otros; ?></b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td style="width: 400px">'</u></b></td>
-								<td><b><u><?php $data->fallaestatus; ?> </u></b></td>
+								<td><b><u>Estado de la falla:</u><?php  echo $data->fallaestatus; ?> </b></td>
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
-								<td><b><u>Estado de la Carcasa:</u></b></td>
-								<td><b><u><?php $data->carcasaestatus; ?></u></b></td>
+								<td><b><u>Estado de la Carcasa: </u> <?php  echo $data->carcasaestatus; ?></b></td>
+
+								<td><b><u>Estado de la Pantalla:</u> <?php  echo $data->pantallaestatus; ?></b></td>
+
 							</tr>
 						</tbody>
 					</table>
-					<table style="width:100%">
-						<tbody>
-							<tr>
-								<td><b><u>Estado de la Pantalla:</u></b></td>
-								<td><b><u><?php $data->pantallaestatus; ?></u></b></td>
-							</tr>
-						</tbody>
-					</table>
+
 					<table style="width:100%">
 						<tbody>
 							<tr>
@@ -207,9 +192,9 @@ font-family: 'Roboto', sans-serif;
 								</u></b></td>
 								<td style="">
 									<ul style="list-style: none; padding: 0px; margin: 0px;" >
-										<li class="border">Total: <?php $data->total; ?> </li>
-										<li class="border">Abono: <?php $data->abono; ?> </li>
-										<li class="border">Resta: <?php $data->total-$data->pantallaestatus;?> </li>
+										<li class="border">Total: <?php echo  $data->total; ?> </li>
+										<li class="border">Abono: <?php echo  $data->abono; ?> </li>
+										<li class="border">Resta: <?php echo ($data->total-$data->abono);?> </li>
 									</ul>
 								</u></b></td>
 							</tr>
@@ -255,7 +240,7 @@ font-family: 'Roboto', sans-serif;
 		exit(0);
 		$pdf =$dompdf->output();
 		*/
-		$filename = "index.pdf";
+		$filename = "factura_".$data->id.".pdf";
 	# Enviamos el fichero PDF al navegador.
 		
 		$dompdf ->stream($filename, array("Attacment"=>0));

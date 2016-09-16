@@ -9,7 +9,10 @@
  */
 angular.module('systemStockApp')
   .controller('InventarioCtrl',['$scope','$http','ngNotify', function ($scope,$http,ngNotify) {
-
+  $scope.botao1 = function() {
+   
+   // alert('Ok!');
+  }
   	$scope.isCollapsed=true;
   	console.log($scope.isCollapsed);
     $scope.nuevo={};
@@ -24,51 +27,30 @@ angular.module('systemStockApp')
             {ngNotify.set('Ocurrio un error al conectar, actualize la pagina para intentarlo nuevamente', 'error');}
           });
   	
-
-  	$scope.sum=function(item,modal)
-  	{
-      if (parseInt(modal.change)>0){
-        var data =[{id: item.id},{mount:parseInt(item.mount)+parseInt(modal.change)}];
-        $http.post('controllers/inventario/updateController.php',data)
-            .then(function(response)
+     $scope.openmodal=function(item,index)
+    {
+      $scope.update='';
+      $scope.modalinventario='';
+      $scope.modalinventario=item;
+      alert($scope.modalinventario.name);
+      $scope.guardar=function(data)
+      {
+        alert(data.name);
+        data.id=item.id;
+         $http.post('controllers/inventario/updateController.php',data)
+            .then(function(response) 
             {
             console.log(response.data)
             if (response.data.mensaje == "success")
-            {ngNotify.set('Se ha aumentado el inventario');
-              item.mount=parseInt(item.mount)+parseInt(modal.change);
-              modal.change='';
+            {
+              ngNotify.set('Inventario modificado');
+              $scope.items[index]=data;
             } 
             else
-            {ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');}
+            {
+              ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');
+            }
             });
-      }else{
-        {ngNotify.set('Cantidad Invalida', 'error');}
-      }
-  	}
-    $scope.rest=function(item,modal)
-    {
-      if(item.mount-modal.change<0)
-      {
-        ngNotify.set('Error cantidad no valida', 'error');
-      }
-      else
-      {
-      var data =[{id: item.id},{mount:item.mount-modal.change}];
-      $http.post('controllers/inventario/updateController.php',data)
-          .then(function(response) 
-          {
-          console.log(response.data)
-          if (response.data.mensaje == "success")
-          {
-            ngNotify.set('Ha decrementado el inventario');
-            item.mount-=modal.change;
-            modal.change='';
-          } 
-          else
-          {
-            ngNotify.set('Ocurrio un error,intentelo nuevamente', 'error');
-          }
-          });
       }
     }
   	$scope.delete=function(item,index)

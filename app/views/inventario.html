@@ -6,7 +6,7 @@
       </div>
   </div>
   <div class="row">
-<form data-toggle="validator" role="form">
+<form data-toggle="validator" role="form" name="producto">
   <div uib-collapse="isCollapsed">
     <div class="panel panel-primary" style="background-color: #23BAB5!important">
       <div class="panel-heading" style="background-color: #23BAB5!important; border-color: #23BAB5!important"><h4>Nuevo Producto</h4></div>
@@ -15,23 +15,26 @@
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Nombre</span>
-                <input ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
+                <input ng-class="{error: producto.nombre.$error.required && producto.nombre.$touched, success: producto.nombre.$valid}" name="nombre" ng-model="nuevo.name" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Nombre del producto" required>
               </div>
+                <span ng-show="producto.nombre.$error.required && producto.nombre.$touched">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div class="input-group">
                 <span class="input-group-addon">Cantidad</span>
-                <input ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
+                <input ng-class="{error: producto.cantidad.$error.required && producto.cantidad.$touched, success: producto.cantidad.$valid}" name="cantidad" ng-model="nuevo.mount" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Cantidad del producto" required>
               </div>
+                <span ng-show="producto.cantidad.$error.required && producto.cantidad.$touched">Campo requerido</span>
               </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
-              <div class="input-group">
+              <div ng-class="{error: producto.precio.$error.required}" class="input-group" >
                 <span class="input-group-addon">Precio</span>
-                <input ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
+                <input ng-class="{error: producto.precio.$error.required && producto.precio.$touched, success: producto.precio.$valid  }" name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
               </div>
+              <span ng-show="producto.precio.$error.required && producto.precio.$touched">Campo requerido</span>
             </div>
             <div class="col-md-3 col-lg-3 col-xs-12">
-                <button ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
+                <button ng-disabled="!producto.$valid" ng-click="add(nuevo)" class="btn btn info right col-xs-12 col-md-12 col-lg-12">Agregar</button>
             </div>
           </div>
         </div>
@@ -41,8 +44,8 @@
   <div class="col-md-10 col-lg-10 col-xs-12 col-md-offset-1 col-lg-offset-1 ">
     <div class="col-xs-12 col-md-12 col-lg-12">
         <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-search fa-lg"></i></span>
-          <input ng-model="search" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Buscar producto">
+          <div class="input-group-addon"><i class="fa fa-search fa-lg"></i><span> | Buscar Producto</span></div>
+          <input ng-model="search" ng-click="botao1()" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Buscar producto">
         </div>
 
         <div class="table table-responsive ">
@@ -52,7 +55,6 @@
                 <th >ARTICULO</th>
                 <th >PRECIO</th>
                 <th >DISPONIBLE</th>
-                <th >CANTIDAD</th>
                 <th >ACCIONES</th>
               </tr>
             </thead>
@@ -61,17 +63,50 @@
                 <td class="col-sm-2 col-md-2 col-lg-2">{{item.name}}</td>
                 <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.price}}" disabled></td>
                 <td class="col-sm-1 col-md-1 col-lg-1"><input  type="text" value="{{item.mount}}" disabled></td>
-                <td class="col-sm-2 col-md-2 col-lg-2"><input  class="col-sm-12 col-md-12 col-lg-12" type="number" ng-model="modal.change" type="text"></td>
                 <td class="col-sm-6 col-md-6 col-lg-6">        
-                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="sum(item,modal)"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i><span class="namebutton"> Adicionar</span></button>
-                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="rest(item,modal)"><i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Descontar</span></button>
-                    <button class="btn btn info col-sx-4 col-md-4 col-lg-4" ng-click="delete(item,$index)"><i class="fa fa-times-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Eliminar</span></button>
+                    <button class="btn btn info col-sx-6 col-md-6 col-lg-6" data-toggle="modal" data-target=".bd-example-modal-sm" ng-click="openmodal(item,$index)" ><i class="fa fa-plus-circle fa-lg"  aria-hidden="true"></i><span class="namebutton"> Modificar</span></button>
+                    <button class="btn btn info col-sx-6 col-md-6 col-lg-6" ng-click="delete(item,$index)"><i class="fa fa-times-circle fa-lg" aria-hidden="true"></i> <span class="namebutton">Eliminar</span></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
     </div>
+    <!-- MODAL MODIFICAR -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="col-sm-12 col-md-12 col-lg-12">Articulo</h2>
+          </div>
+          <div class="modal-body">
+            <div ng-form="formarticulo" class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <label for="articulo">Nombre:</label>
+                  <input  ng-model="update.nombre"  name="articulo" type="text" required/>
+                  <span ng-show="formarticulo.articulo.$error.required">Este Campo es requerido</span>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <label for="precio">Precio:</label>
+                  <input ng-model="update.precio"  name="precio" type="number" required/>
+                  <span ng-show="formarticulo.precio.$error.required">Este Campo es requerido</span>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <label for="monto">Monto:</label>
+                  <input ng-model="update.monto" name="monto" type="number" required/>
+                  <span ng-show="formarticulo.monto.$error.required">Este Campo es requerido</span>
+                </div>
+            </div>
+          </div>
+            
+          <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="guardar(update)" ng-disabled="formarticulo.$invalid" data-dismiss="modal">Guardar</button>
+            <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL MODIFICAR-->
     <style type="text/css" media="screen">
         td,input{
           padding: 3px !important;
@@ -86,3 +121,4 @@
       }
     </style>
 </div>
+

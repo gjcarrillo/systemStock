@@ -14,8 +14,9 @@ if($respon)
 	{
 		$item= array('id' => $x['id'],
 		             'name'=> $x['name'],
-		             'price'=>$x['price'],
-		             'mount'=>$x['mount']);
+		             'price'=>intval($x['price']),
+		             'mount'=>intval($x['mount'])
+		             );
 		$arrayItems[]=$item;
 	}
 	$array['data']=$arrayItems;

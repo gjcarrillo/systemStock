@@ -28,5 +28,6 @@ else
 {
 $array['mensaje']= "failed";
 }
+//print_r($array);
 echo json_encode($array);
  ?>
