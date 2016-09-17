@@ -31,11 +31,11 @@ angular.module('systemStockApp')
     {
       $scope.update='';
       $scope.update=angular.copy(item);
-      $scope.guardar=function()
+      $scope.guardar=function(data)
       {
         
         
-         $http.post('controllers/inventario/updateController.php',$scope.modalinventario)
+         $http.post('controllers/inventario/updateController.php',data)
             .then(function(response) 
             {
             console.log(response.data)
