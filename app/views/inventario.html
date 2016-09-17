@@ -29,7 +29,7 @@
             <div class="col-md-3 col-lg-3 col-xs-12">
               <div ng-class="{error: producto.precio.$error.required}" class="input-group" >
                 <span class="input-group-addon">Precio</span>
-                <input ng-class="{error: producto.precio.$error.required && producto.precio.$touched, success: producto.precio.$valid  }" name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="text" placeholder="Precio del producto" required>
+                <input ng-class="{error: producto.precio.$error.required && producto.precio.$touched, success: producto.precio.$valid  }" name="precio" ng-model="nuevo.price" class="form-control col-md-11 col-lg-11 col-xs-11" type="number" placeholder="Precio del producto" required>
               </div>
               <span ng-show="producto.precio.$error.required && producto.precio.$touched">Campo requerido</span>
             </div>
@@ -100,7 +100,7 @@
           </div>
             
           <div class="modal-footer">
-            <button class="btn btn-primary" ng-disabled="producto.$invalid" ng-click="guardar(update)" data-dismiss="modal">Guardar</button>
+            <button class="btn btn-primary" ng-disabled="productomodal.$invalid" ng-click="guardar(update)" data-dismiss="modal">Guardar</button>
             <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           </div>
         </div>
