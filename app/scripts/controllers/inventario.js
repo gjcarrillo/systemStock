@@ -30,14 +30,12 @@ angular.module('systemStockApp')
      $scope.openmodal=function(item,index)
     {
       $scope.update='';
-      $scope.modalinventario='';
-      $scope.modalinventario=item;
-      alert($scope.modalinventario.name);
-      $scope.guardar=function(data)
+      $scope.update=angular.copy(item);
+      $scope.guardar=function()
       {
-        alert(data.name);
-        data.id=item.id;
-         $http.post('controllers/inventario/updateController.php',data)
+        
+        
+         $http.post('controllers/inventario/updateController.php',$scope.modalinventario)
             .then(function(response) 
             {
             console.log(response.data)

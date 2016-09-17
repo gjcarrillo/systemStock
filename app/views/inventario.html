@@ -80,27 +80,27 @@
             <h2 class="col-sm-12 col-md-12 col-lg-12">Articulo</h2>
           </div>
           <div class="modal-body">
-            <div ng-form="formarticulo" class="row">
+            <div ng-form="producto" class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <label for="articulo">Nombre:</label>
-                  <input  ng-model="update.nombre"  name="articulo" type="text" required/>
-                  <span ng-show="formarticulo.articulo.$error.required">Este Campo es requerido</span>
+                  <span >Nombre:</span>
+                  <input  ng-model="update.name"  name="articulo" type="text" required>
+                  <span ng-show="producto.articulo.$error.required">Este campo es requerido</span>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <label for="precio">Precio:</label>
-                  <input ng-model="update.precio"  name="precio" type="number" required/>
-                  <span ng-show="formarticulo.precio.$error.required">Este Campo es requerido</span>
+                  <span>Precio:</span>
+                  <input ng-model="update.price"  name="precio" type="number" required>
+                  <span ng-show="producto.precio.$error.required">Este campo es requerido</span>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <label for="monto">Monto:</label>
-                  <input ng-model="update.monto" name="monto" type="number" required/>
-                  <span ng-show="formarticulo.monto.$error.required">Este Campo es requerido</span>
+                  <span >Monto:</span>
+                  <input ng-model="update.mount"  name="monto" type="number" required>
+                  <span ng-show="producto.monto.$error.required">Este campo es requerido</span>
                 </div>
             </div>
           </div>
             
           <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="guardar(update)" ng-disabled="formarticulo.$invalid" data-dismiss="modal">Guardar</button>
+            <button class="btn btn-primary" ng-disabled="producto.$invalid" ng-click="guardar(update)" data-dismiss="modal">Guardar</button>
             <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           </div>
         </div>
