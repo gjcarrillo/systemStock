@@ -112,12 +112,14 @@ font-family: 'Roboto', sans-serif;
 								<td><b><u>C.I:</u> <?php echo $data->ci; ?></b></td>
 								<td><b><u>Telefono:</u> <?php  echo $data->tlf; ?></b></td>
 								<td><b><u>Cel:</u> <?php echo $data->cel; ?></b></td>
+
 							</tr>
 						</tbody>
 					</table>
 					<table style="width:100%">
 						<tbody>
 							<tr>
+
 								<td><b><u>Equipo: </u><?php echo $data->equipo; ?></b></td>
 							</tr>
 						</tbody>
@@ -149,6 +151,7 @@ font-family: 'Roboto', sans-serif;
 						<tbody>
 							<tr>
 								<td><b><u>Falla de el Equipo:</u></b></td>
+
 								<td><b><?php echo $data->fallaequipo; ?> </b></td>
 							</tr>
 						</tbody>
@@ -194,6 +197,7 @@ font-family: 'Roboto', sans-serif;
 									<ul style="list-style: none; padding: 0px; margin: 0px;" >
 										<li class="border">Total: <?php echo  $data->total; ?> </li>
 										<li class="border">Abono: <?php echo  $data->abono; ?> </li>
+
 										<li class="border">Resta: <?php echo ($data->total-$data->abono);?> </li>
 									</ul>
 								</u></b></td>

@@ -54,6 +54,7 @@ body{
 .success
 {
   border-color: green !important;
+
 }
 
 .material-icons {
@@ -70,4 +71,5 @@ body{
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+
 }
